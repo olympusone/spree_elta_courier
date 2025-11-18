@@ -1,0 +1,18 @@
+---
+el:
+  spree:
+    admin:
+      integrations:
+        elta_courier:
+          title: ΕΛΤΑ Courier
+          description: Διασύνδεση με τις υπηρεσίες της ΕΛΤΑ Courier
+          preferred_wsdl_url: WSDL URL
+          preferred_customer_code: Customer Code
+          preferred_user_code: User Code
+          preferred_password: Password
+          preferred_paper_type: Τύπος Χαρτιού
+          create_voucher: Δημιουργία Voucher
+          print_voucher: Εκτύπωση Voucher
+          voucher_successfully_created: Voucher δημιουργήθηκε επιτυχώς
+          voucher_creation_failed: Αποτυχία δημιουργίας Voucher
+          voucher_print_failed: Αποτυχία εκτύπωσης Voucher
