@@ -4,6 +4,7 @@ en:
     admin:
       integrations:
         elta_courier:
+          title: ΕΛΤΑ Courier
           description: Elta Courier is a shipping integration for Greece
           preferred_wsdl_url: WSDL URL
           preferred_customer_code: Customer Code
