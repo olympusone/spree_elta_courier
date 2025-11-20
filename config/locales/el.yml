@@ -10,7 +10,7 @@ el:
           preferred_customer_code: Customer Code
           preferred_user_code: User Code
           preferred_password: Password
-          preferred_paper_type: Τύπος Χαρτιού
+          preferred_paper_size: Μέγεθος Χαρτιού
           create_voucher: Δημιουργία Voucher
           print_voucher: Εκτύπωση Voucher
           voucher_successfully_created: Voucher δημιουργήθηκε επιτυχώς

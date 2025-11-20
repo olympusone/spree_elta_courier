@@ -10,7 +10,7 @@ en:
           preferred_customer_code: Customer Code
           preferred_user_code: User Code
           preferred_password: Password
-          preferred_paper_type: Paper Type
+          preferred_paper_size: Paper Size
           create_voucher: Create Voucher
           print_voucher: Print Voucher
           voucher_successfully_created: Voucher successfully created
