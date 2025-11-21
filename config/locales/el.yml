@@ -11,8 +11,8 @@ el:
           preferred_user_code: User Code
           preferred_password: Password
           preferred_paper_size: Μέγεθος Χαρτιού
-          create_voucher: Δημιουργία Voucher
-          print_voucher: Εκτύπωση Voucher
+          create_voucher: Δημιουργία Voucher (Elta Courier)
+          print_voucher: Εκτύπωση Voucher (Elta Courier)
           voucher_successfully_created: Voucher δημιουργήθηκε επιτυχώς
           voucher_creation_failed: Αποτυχία δημιουργίας Voucher
           voucher_print_failed: Αποτυχία εκτύπωσης Voucher

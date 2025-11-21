@@ -6,35 +6,54 @@ This is an Elta Courier extension for [Spree Commerce](https://spreecommerce.org
 
 ## Installation
 
-1. Add this extension to your Gemfile with this line:
+1. Add this extension to your Gemfile:
 
     ```ruby
     bundle add spree_elta_courier
     ```
 
-2. Restart your server
+2. Restart your server.
 
-  If your server was running, restart it so that it can find the assets properly.
+## Usage (Creating & Printing Vouchers)
+
+Prerequisites for an order:
+
+- Shipping and billing addresses present
+- Payment completed
+- Order state: ready (so shipments exist and are ready to ship)
+
+Workflow:
+
+1. Open the order in Spree Admin.
+2. If the order meets the prerequisites, the “Create Voucher” option appears in the top‑right dropdown.
+3. Click “Create Voucher” (creates one voucher per shipment or split shipment).
+4. After successful creation, the “Print Voucher” option becomes available.
+5. Click “Print Voucher”: a merged (or single) PDF opens in a new tab for download/printing.
+
+Notes:
+
+- Multiple shipment vouchers are merged into one PDF.
+- If no voucher can be created (e.g. order not ready), the button does not appear.
+- Errors will return and log details server‑side.
 
 ## Developing
 
-1. Create a dummy app
+1. Create a dummy app:
 
     ```bash
     bundle update
     bundle exec rake test_app
     ```
 
-2. Add your new code
+2. Add code.
 
-3. Run tests
+3. Run tests:
 
     ```bash
     bundle exec rspec
     ```
 
-When testing your applications integration with this extension you may use it's factories.
-Simply add this require statement to your spec_helper:
+When testing your application's integration you may use its factories:
 
 ```ruby
 require 'spree_elta_courier/factories'
@@ -42,19 +61,21 @@ require 'spree_elta_courier/factories'
 
 ## Testing
 
-By running the Spree test_app rake task, we can generate a barebones Spree application within our spec directory to run our tests against.
-
-We can do this with the following command from the root directory of our extension:
+Generate the test app:
 
 ```bash
 bundle exec rake test_app
 ```
 
-After this command completes, you should be able to run `rspec`.
+Then run:
+
+```bash
+bundle exec rspec
+```
 
 ## Releasing a new version
 
-```shell
+```bash
 bundle exec gem bump -p -t
 bundle exec gem release
 ```

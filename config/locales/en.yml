@@ -11,8 +11,8 @@ en:
           preferred_user_code: User Code
           preferred_password: Password
           preferred_paper_size: Paper Size
-          create_voucher: Create Voucher
-          print_voucher: Print Voucher
+          create_voucher: Create Voucher (Elta Courier)
+          print_voucher: Print Voucher (Elta Courier)
           voucher_successfully_created: Voucher successfully created
           voucher_creation_failed: Voucher creation failed
           voucher_print: Voucher printing failed
