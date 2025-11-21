@@ -7,6 +7,7 @@ RSpec.describe EltaCourier::SoapClient, :integration do
       preferred_customer_code: ENV['ELTA_COURIER_CUSTOMER_CODE'],
       preferred_user_code: ENV['ELTA_COURIER_USER_CODE'],
       preferred_password: ENV['ELTA_COURIER_PASSWORD'],
+      preferred_paper_size: "1"
     )
   end
 

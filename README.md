@@ -1,6 +1,6 @@
 # Spree Elta Courier
 
-This is a Elta Courier extension for [Spree Commerce](https://spreecommerce.org), an open source e-commerce platform built with Ruby on Rails. Adds the ability to manage Elta Courier vouchers to Spree stores.
+This is an Elta Courier extension for [Spree Commerce](https://spreecommerce.org), an open‑source e-commerce platform built with Ruby on Rails. It adds the ability to manage Elta Courier vouchers.
 
 [![Gem Version](https://badge.fury.io/rb/spree_elta_courier.svg)](https://badge.fury.io/rb/spree_elta_courier)
 
@@ -12,13 +12,7 @@ This is a Elta Courier extension for [Spree Commerce](https://spreecommerce.org)
     bundle add spree_elta_courier
     ```
 
-2. Run the install generator
-
-    ```ruby
-    bundle exec rails g spree_elta_courier:install
-    ```
-
-3. Restart your server
+2. Restart your server
 
   If your server was running, restart it so that it can find the assets properly.
 
@@ -32,6 +26,7 @@ This is a Elta Courier extension for [Spree Commerce](https://spreecommerce.org)
     ```
 
 2. Add your new code
+
 3. Run tests
 
     ```bash
@@ -72,4 +67,4 @@ If you'd like to contribute, please take a look at the
 [instructions](CONTRIBUTING.md) for installing dependencies and crafting a good
 pull request.
 
-Copyright (c) 2025 OlympusOne, released under the MIT
+Copyright (c) 2025 OlympusOne, released under the AGPL-3.0 or later.

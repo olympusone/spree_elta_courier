@@ -17,6 +17,5 @@ gem 'mysql2' if ENV['DB'] == 'mysql' || ENV['CI']
 gem 'pg' if ENV['DB'] == 'postgres' || ENV['CI']
 
 gem 'sqlite3', '>= 2.0'
-gem 'combine_pdf', '~> 1.0'
 
 gemspec
