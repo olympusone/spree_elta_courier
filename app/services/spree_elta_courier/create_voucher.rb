@@ -10,7 +10,7 @@ module SpreeEltaCourier
     end
 
     def call
-      address = shipment.address
+      address = order.shipping_address
       cod_payment = order.payment_method&.cod_payment?
 
       record = {
