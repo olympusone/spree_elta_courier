@@ -1,5 +1,5 @@
 module SpreeEltaCourier
-  VERSION = '1.1.1'.freeze
+  VERSION = '1.2.0'.freeze
 
   def gem_version
     Gem::Version.new(VERSION)

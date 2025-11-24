@@ -23,7 +23,7 @@ module SpreeEltaCourier
         'pel_paral_thl_1' => address.phone,
         'pel_baros' => shipment.item_weight.to_f,
         'pel_temaxia' => num_packages,
-        'pel_paral_sxolia' => shipment.special_instructions,
+        'pel_paral_sxolia' => order.special_instructions,
         'pel_ant_poso' => cod_payment ? shipment.final_price_with_items.to_f : 0,
         'pel_ref_no' => shipment.number,
         'sideta_eidos' => 2 # 1=Documents, 2=Parcel
