@@ -12,6 +12,7 @@ export default class extends Controller {
     event.preventDefault();
 
     const packages = window.prompt(this.createVoucherPromptValue, 1);
+    if (packages === null) return;
 
     const numPackages = parseInt(packages, 10);
     if (isNaN(numPackages) || numPackages <= 0) {
