@@ -13,6 +13,8 @@ el:
           preferred_paper_size: Μέγεθος Χαρτιού
           create_voucher: Δημιουργία Voucher (Elta Courier)
           print_voucher: Εκτύπωση Voucher (Elta Courier)
+          create_voucher_prompt: "Εισάγετε αριθμό δεμάτων (ανά Αποστολή):"
+          create_voucher_error: Ο αριθμός των δεμάτων πρέπει να είναι θετικός ακέραιος αριθμός.
           voucher_successfully_created: Voucher δημιουργήθηκε επιτυχώς
           voucher_creation_failed: Αποτυχία δημιουργίας Voucher
           voucher_print_failed: Αποτυχία εκτύπωσης Voucher

@@ -9,25 +9,27 @@ module Spree
         begin
           load_order
 
+          num_packages = params[:num_packages].to_i || 1
+
           @order.shipments.each do |shipment|
             next unless shipment.can_create_voucher?
 
-            result = SpreeEltaCourier::CreateVoucher.new(shipment).call
+            result = SpreeEltaCourier::CreateVoucher.new(shipment, num_packages).call
 
-            shipment.update(
-              tracking: result[:vg_code]
-            )
+            vg_child = result[:vg_child].compact
+
+            shipment.tracking = result[:vg_code]
+            shipment.private_metadata['elta_courier.vg_child'] = vg_child
+            shipment.save!
           end
 
           flash[:success] = Spree.t('admin.integrations.elta_courier.voucher_successfully_created')
-          redirect_to spree.admin_order_path(@order)
         rescue ActiveRecord::RecordNotFound
           order_not_found
         rescue StandardError => e
           Rails.logger.error "Elta Courier Error: #{e.message}"
 
           flash[:error] = Spree.t('admin.integrations.elta_courier.voucher_creation_failed')
-          redirect_to spree.admin_order_path(@order)
         end
       end
 
@@ -35,8 +37,13 @@ module Spree
         begin
           load_order
 
-          voucher_numbers = @order.shipments.select(&:can_print_voucher?)
-                                  .map(&:tracking).compact
+          shipments = @order.shipments.select(&:can_print_voucher?)
+          
+          voucher_numbers = shipments.flat_map do |shipment|
+            vg_child = shipment.private_metadata['elta_courier.vg_child'] || []
+            
+            [shipment.tracking] + vg_child
+          end
 
           if voucher_numbers.empty?
             raise StandardError, Spree.t('admin.integrations.elta_courier.voucher_print_failed')
@@ -84,7 +91,6 @@ module Spree
 
       def order_not_found
         flash[:error] = flash_message_for(Spree::Order.new, :not_found)
-        redirect_to spree.admin_orders_path
       end
     end
   end

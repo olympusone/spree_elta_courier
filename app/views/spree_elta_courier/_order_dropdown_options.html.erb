@@ -1,11 +1,16 @@
 <% if store_integration('elta_courier').present? %>
   <% if @order.can_create_voucher? %>
-    <%= link_to_with_icon 'package',
-      Spree.t('admin.integrations.elta_courier.create_voucher'),
-      spree.admin_elta_courier_create_path(@order.id),
-      class: 'btn text-left dropdown-item',
-      data: { turbo_method: :post, turbo_confirm: Spree.t(:are_you_sure) }
-    %>
+    <button
+      type="button"
+      class='btn text-left dropdown-item'
+      data-controller='elta-courier'
+      data-action='elta-courier#createVoucher'
+      data-elta-courier-order-id-value='<%= @order.id %>'
+      data-elta-courier-create-voucher-prompt-value="<%= Spree.t('admin.integrations.elta_courier.create_voucher_prompt') %>"
+      data-elta-courier-create-voucher-error-value="<%= Spree.t('admin.integrations.elta_courier.create_voucher_error') %>">
+      <%= icon 'package' %>
+      <%= Spree.t('admin.integrations.elta_courier.create_voucher') %>
+    </button>
   <% end %>
 
   <% if @order.can_print_voucher? %>

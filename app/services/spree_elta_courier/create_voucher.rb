@@ -1,16 +1,18 @@
 module SpreeEltaCourier
   class CreateVoucher
-    attr_reader :order, :shipment, :client
+    attr_reader :shipment, :num_packages, :order, :client
 
-    def initialize(shipment)
-      @order = shipment.order
+    def initialize(shipment, num_packages = 1)
       @shipment = shipment
+      @num_packages = num_packages
+
+      @order = shipment.order
 
       @client = EltaCourier::SoapClient.new(:create)
     end
 
     def call
-      address = order.shipping_address
+      address = shipment.address
       cod_payment = order.payment_method&.cod_payment?
 
       record = {
@@ -20,8 +22,8 @@ module SpreeEltaCourier
         'pel_paral_tk' => address.zipcode.gsub(/\s+/, ''),
         'pel_paral_thl_1' => address.phone,
         'pel_baros' => shipment.item_weight.to_f,
-        'pel_temaxia' => 1,
-        'pel_paral_sxolia' => order.special_instructions,
+        'pel_temaxia' => num_packages,
+        'pel_paral_sxolia' => shipment.special_instructions,
         'pel_ant_poso' => cod_payment ? shipment.final_price_with_items.to_f : 0,
         'pel_ref_no' => shipment.number,
         'sideta_eidos' => 2 # 1=Documents, 2=Parcel
