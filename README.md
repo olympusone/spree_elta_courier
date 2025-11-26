@@ -8,7 +8,7 @@ This is an Elta Courier extension for [Spree Commerce](https://spreecommerce.org
 
 1. Add this extension to your Gemfile:
 
-    ```ruby
+    ```bash
     bundle add spree_elta_courier
     ```
 
