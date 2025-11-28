@@ -8,6 +8,6 @@ module Spree
       shipments.any?(&:can_print_voucher?)
     end
   end
-end
 
-Spree::Order.prepend Spree::OrderDecorator
+  Order.prepend OrderDecorator
+end

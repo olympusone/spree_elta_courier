@@ -8,6 +8,6 @@ module Spree
       tracked?
     end
   end
-end
 
-Spree::Shipment.prepend Spree::ShipmentDecorator
+  Shipment.prepend ShipmentDecorator
+end

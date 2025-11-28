@@ -6,13 +6,13 @@ This is an Elta Courier extension for [Spree Commerce](https://spreecommerce.org
 
 ## Installation
 
-1. Add this extension to your Gemfile:
+1. Add this extension to your Gemfile with this line:
 
     ```bash
     bundle add spree_elta_courier
     ```
 
-2. Restart your server.
+2. Restart your server
 
 ## Usage (Creating & Printing Vouchers)
 
@@ -38,39 +38,26 @@ Notes:
 
 ## Developing
 
-1. Create a dummy app:
+1. Create a dummy app
 
     ```bash
     bundle update
     bundle exec rake test_app
     ```
 
-2. Add code.
+2. Add your new code
 
-3. Run tests:
+3. Run tests
 
     ```bash
     bundle exec rspec
     ```
 
-When testing your application's integration you may use its factories:
+When testing your applications integration with this extension you may use it's factories.
+Simply add this require statement to your spec_helper:
 
 ```ruby
 require 'spree_elta_courier/factories'
-```
-
-## Testing
-
-Generate the test app:
-
-```bash
-bundle exec rake test_app
-```
-
-Then run:
-
-```bash
-bundle exec rspec
 ```
 
 ## Releasing a new version

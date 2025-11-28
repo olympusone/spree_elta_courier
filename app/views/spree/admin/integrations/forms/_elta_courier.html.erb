@@ -7,9 +7,7 @@
       <%= preference_field(@integration, form, 'password', i18n_scope: 'admin.integrations.elta_courier') %>
 
       <div class="form-group">
-        <%= form.label :preferred_paper_size, Spree.t('admin.integrations.elta_courier.preferred_paper_size') %>
-        <%= form.select :preferred_paper_size, options_for_select([['A4', '0'], ['A6', '1']], @integration.preferred_paper_size), {}, { class: 'custom-select', data: {  action: 'auto-submit#submit' } } %>
-        <%= form.error_message_on :preferred_paper_size %>
+        <%= form.spree_select :preferred_paper_size, options_for_select([['A4', '0'], ['A6', '1']], @integration.preferred_paper_size), label: Spree.t('admin.integrations.elta_courier.preferred_paper_size') %>
       </div>
     </div>
   </div>

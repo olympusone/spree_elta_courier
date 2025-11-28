@@ -18,13 +18,10 @@ module SpreeEltaCourier
       app.config.assets.precompile += %w[spree_elta_courier_manifest]
     end
 
-    initializer 'spree_elta_courier.importmap', after: 'spree.admin.importmap' do |app|
-      app.config.spree_admin.importmap.draw(root.join('config/importmap.rb'))
-      app.config.spree_admin.cache_sweepers << root.join('app/javascript')
-    end
-
-    initializer 'spree_elta_courier.cache_sweeper', before: 'spree.admin.importmap.cache_sweeper' do |app|
-      app.config.spree_admin.cache_sweepers << root.join('app/javascript')
+    initializer 'spree_elta_courier.importmap', before: 'importmap' do |app|
+      app.config.importmap.paths << root.join('config/importmap.rb')
+      # https://github.com/rails/importmap-rails?tab=readme-ov-file#sweeping-the-cache-in-development-and-test
+      app.config.importmap.cache_sweepers << root.join('app/javascript')
     end
 
     def self.activate
