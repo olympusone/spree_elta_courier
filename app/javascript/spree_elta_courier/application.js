@@ -11,6 +11,6 @@ if (typeof window.Stimulus === "undefined") {
   application = window.Stimulus
 }
 
-import EltaCourierController from 'spree_elta_courier/controllers/elta_courier_controller'
+import SpreeEltaCourierController from 'spree_elta_courier/controllers/spree_elta_courier_controller'
 
-application.register('elta-courier', EltaCourierController)
+application.register('spree-elta-courier', SpreeEltaCourierController)

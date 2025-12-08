@@ -23,7 +23,9 @@ module SpreeEltaCourier
     end
 
     initializer 'spree_elta_courier.cache_sweeper', before: 'spree.admin.importmap.cache_sweeper' do |app|
-      app.config.spree_admin.cache_sweepers << root.join('app/javascript')
+      if app.config.importmap.sweep_cache && app.config.reloading_enabled?
+        app.config.spree_admin.cache_sweepers << root.join('app/javascript')
+      end
     end
 
     def self.activate

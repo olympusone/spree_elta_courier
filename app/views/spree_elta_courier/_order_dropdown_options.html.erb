@@ -3,11 +3,11 @@
     <button
       type="button"
       class='btn text-left dropdown-item'
-      data-controller='elta-courier'
-      data-action='elta-courier#createVoucher'
-      data-elta-courier-order-id-value='<%= @order.id %>'
-      data-elta-courier-create-voucher-prompt-value="<%= Spree.t('admin.integrations.elta_courier.create_voucher_prompt') %>"
-      data-elta-courier-create-voucher-error-value="<%= Spree.t('admin.integrations.elta_courier.create_voucher_error') %>">
+      data-controller='spree-elta-courier'
+      data-action='spree-elta-courier#createVoucher'
+      data-spree-elta-courier-order-id-value='<%= @order.id %>'
+      data-spree-elta-courier-create-voucher-prompt-value="<%= Spree.t('admin.integrations.elta_courier.create_voucher_prompt') %>"
+      data-spree-elta-courier-create-voucher-error-value="<%= Spree.t('admin.integrations.elta_courier.create_voucher_error') %>">
       <%= icon 'package' %>
       <%= Spree.t('admin.integrations.elta_courier.create_voucher') %>
     </button>

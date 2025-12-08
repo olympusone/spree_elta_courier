@@ -38,10 +38,9 @@ module Spree
           load_order
 
           shipments = @order.shipments.select(&:can_print_voucher?)
-          
+
           voucher_numbers = shipments.flat_map do |shipment|
             vg_child = shipment.private_metadata['elta_courier.vg_child'] || []
-            
             [shipment.tracking] + vg_child
           end
 
