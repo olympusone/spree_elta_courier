@@ -6,11 +6,11 @@ el:
         elta_courier:
           title: ΕΛΤΑ Courier
           description: Διασύνδεση με τις υπηρεσίες της ΕΛΤΑ Courier
-          preferred_wsdl_url: WSDL URL
-          preferred_customer_code: Customer Code
-          preferred_user_code: User Code
-          preferred_password: Password
-          preferred_paper_size: Μέγεθος Χαρτιού
+          wsdl_url: WSDL URL
+          customer_code: Customer Code
+          user_code: User Code
+          password: Password
+          paper_size: Μέγεθος Χαρτιού
           create_voucher: Δημιουργία Voucher (Elta Courier)
           print_voucher: Εκτύπωση Voucher (Elta Courier)
           create_voucher_prompt: "Εισάγετε αριθμό δεμάτων (ανά Αποστολή):"

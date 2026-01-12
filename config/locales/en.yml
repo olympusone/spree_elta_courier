@@ -6,11 +6,11 @@ en:
         elta_courier:
           title: ΕΛΤΑ Courier
           description: Elta Courier is a shipping integration for Greece
-          preferred_wsdl_url: WSDL URL
-          preferred_customer_code: Customer Code
-          preferred_user_code: User Code
-          preferred_password: Password
-          preferred_paper_size: Paper Size
+          wsdl_url: WSDL URL
+          customer_code: Customer Code
+          user_code: User Code
+          password: Password
+          paper_size: Paper Size
           create_voucher: Create Voucher (Elta Courier)
           print_voucher: Print Voucher (Elta Courier)
           create_voucher_prompt: "Enter the number of package (per Shipment):"
