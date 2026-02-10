@@ -3,22 +3,22 @@ en:
   activerecord:
     attributes:
       spree/shipping_method:
-        elta_courier: Elta Courier
+        elta_courier: ELTA Courier
   spree:
     admin:
       integrations:
         elta_courier:
-          title: ΕΛΤΑ Courier
-          description: Elta Courier is a shipping integration for Greece
+          title: ELTA Courier
+          description: ELTA Courier is a shipping integration for Greece
           wsdl_url: WSDL URL
           customer_code: Customer Code
           user_code: User Code
           password: Password
           paper_size: Paper Size
-          create_voucher: Create Voucher (Elta Courier)
-          print_voucher: Print Voucher (Elta Courier)
+          create_voucher: Create Voucher (ELTA Courier)
+          print_voucher: Print Voucher (ELTA Courier)
           create_voucher_prompt: "Enter the number of package (per Shipment):"
           create_voucher_error: The number of package must be a positive integer number.
           voucher_successfully_created: Voucher successfully created
           voucher_creation_failed: Voucher creation failed
-          voucher_print: Voucher printing failed
+          voucher_print_failed: Voucher printing failed
