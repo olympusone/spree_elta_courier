@@ -8,9 +8,9 @@ This is an Elta Courier extension for [Spree Commerce](https://spreecommerce.org
 
 1. Add this extension to your Gemfile with this line:
 
-    ```bash
-    bundle add spree_elta_courier
-    ```
+   ```bash
+   bundle add spree_elta_courier
+   ```
 
 2. Restart your server
 
@@ -40,18 +40,18 @@ Notes:
 
 1. Create a dummy app
 
-    ```bash
-    bundle update
-    bundle exec rake test_app
-    ```
+   ```bash
+   bundle update
+   bundle exec rake test_app
+   ```
 
 2. Add your new code
 
 3. Run tests
 
-    ```bash
-    bundle exec rspec
-    ```
+   ```bash
+   bundle exec rspec
+   ```
 
 When testing your applications integration with this extension you may use it's factories.
 Simply add this require statement to your spec_helper:
