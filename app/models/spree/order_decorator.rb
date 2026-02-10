@@ -1,11 +1,11 @@
 module Spree
   module OrderDecorator
-    def can_create_voucher?
-      shipments.any?(&:can_create_voucher?)
+    def can_create_elta_courier_voucher?
+      shipments.any?(&:can_create_elta_courier_voucher?)
     end
 
-    def can_print_voucher?
-      shipments.any?(&:can_print_voucher?)
+    def can_print_elta_courier_voucher?
+      shipments.any?(&:can_print_elta_courier_voucher?)
     end
   end
 

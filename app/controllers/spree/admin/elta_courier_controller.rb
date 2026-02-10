@@ -12,7 +12,7 @@ module Spree
           num_packages = params[:num_packages].to_i || 1
 
           @order.shipments.each do |shipment|
-            next unless shipment.can_create_voucher?
+            next unless shipment.can_create_elta_courier_voucher?
 
             result = SpreeEltaCourier::CreateVoucher.new(shipment, num_packages).call
 
@@ -37,7 +37,7 @@ module Spree
         begin
           load_order
 
-          shipments = @order.shipments.select(&:can_print_voucher?)
+          shipments = @order.shipments.select(&:can_print_elta_courier_voucher?)
 
           voucher_numbers = shipments.flat_map do |shipment|
             vg_child = shipment.private_metadata['elta_courier.vg_child'] || []

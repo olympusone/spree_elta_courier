@@ -1,5 +1,9 @@
 ---
 en:
+  activerecord:
+    attributes:
+      spree/shipping_method:
+        elta_courier: Elta Courier
   spree:
     admin:
       integrations:

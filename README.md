@@ -12,7 +12,15 @@ This is an Elta Courier extension for [Spree Commerce](https://spreecommerce.org
    bundle add spree_elta_courier
    ```
 
-2. Restart your server
+2. Run the install generator
+
+   ```bash
+   bundle exec rails g spree_elta_courier:install
+   ```
+
+3. Restart your server
+
+  If your server was running, restart it so that it can find the assets properly.
 
 ## Usage (Creating & Printing Vouchers)
 
